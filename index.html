@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Setup</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="start_wrapper">
+        <form onsubmit="startGame(event)" class="selector">
+            <label for="time">Turn length</label>
+            <select name="time">
+                <option value="60">60min</option>
+                <option value="30">30min</option>
+                <option value="10">10min</option>
+                <option value="5">5min</option>
+                <option value="3">3min</option>
+                <option value="1">1min</option>
+            </select>
+            <input type="submit" value="Start Game!">
+        </form>
+    </div>
+    <div class="timer">
+        <button id="white" class="button active">
+            <p id="white_time" class="time_display"></p>
+        </button>
+        <button id="black" class="button" disabled>
+            <p id="black_time" class="time_display"></p>
+        </button>
+        <button id="back_button">Cancel</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
