@@ -67,6 +67,13 @@ function startGame(event) {
     const wrapper = document.getElementById("start_wrapper")
     wrapper.style.display = "none"
 
+    let url = new URL(window.location.href);
+    let loser = url.searchParams.get("out_of_time")
+    if (loser) {
+        document.getElementById("result").remove()
+        url.searchParams.delete("out_of_time")
+        window.history.pushState({}, '', url);
+    }
     interval = setInterval(whiteCallback, 100)
 }
 
@@ -79,9 +86,18 @@ function cancelGame() {
     let loser = url.searchParams.get("out_of_time")
     if (loser) {
         const p = document.createElement("p")
+        p.id = "result"
         p.innerHTML = `${loser} run out of time!`
-        wrapper.appendChild(p)
+        wrapper.prepend(p)
     }
+    reset()
+}
+
+function reset() {
+    white.classList.add("active")
+    white.removeAttribute("disabled")
+    black.classList.remove("active")
+    black.setAttribute("disabled", true)
 }
 
 function whiteCallback() {

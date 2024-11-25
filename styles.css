@@ -40,23 +40,29 @@ body {
     font-size: xx-large;
 }
 
-.selector {
+#start_wrapper {
+    height: 30vh;
+    width: 80%;
+    position: absolute;
+    background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: black;
-    text-align: center;
-    color: gainsboro;
     border-radius: 0.8em;
-    padding: 1em;
-    row-gap: 1em;
-    height: 20vh;
-    width: 80%;
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
+}
+
+.selector {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: gainsboro;
+    padding: 1em;
+    row-gap: 1em;
 }
 
 select {
@@ -74,6 +80,11 @@ option {
     top: 50%;
     left: 100%;
     transform: translate(-100%, -50%) rotate(90deg);
-    height: 5em;
-    width: 10em;
+    height: 10vh;
+    width: 20vh;
+}
+
+#result {
+    color: antiquewhite;
+    text-align: center;
 }
